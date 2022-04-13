@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+    <Metadata>
+        <Identity Id="CheckedExceptions.ebfbbfb4-c52f-400c-9899-e7834adec776" Version="3.10" Language="en-US" Publisher="Yoav Frandzel"/>
+        <DisplayName>Checked Exceptions</DisplayName>
+        <Description xml:space="preserve">Poor man's checked exceptions for C#.
+Checks for unhandled exceptions, violations of Liskov's Substitution Principle and other potential errors in exception handling. </Description>
+        <ReleaseNotes>Support VS2019</ReleaseNotes>
+        <Icon>checkMark.png</Icon>
+    </Metadata>
+    <Installation>
+        <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[15.0,)" />
+    </Installation>
+    <Dependencies>
+        <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+    </Dependencies>
+    <Assets>
+        <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="CheckedExceptions" Path="|CheckedExceptions|"/>
+        <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="CheckedExceptions" Path="|CheckedExceptions|"/>
+        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="CheckedExceptionsOptions" Path="|CheckedExceptionsOptions;PkgdefProjectOutputGroup|" />
+    </Assets>
+    <Prerequisites>
+        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,)" DisplayName="Visual Studio core editor" />
+        <Prerequisite Id="Microsoft.VisualStudio.Component.Roslyn.LanguageServices" Version="[15.0,)" DisplayName="Roslyn Language Services" />
+    </Prerequisites>
+</PackageManifest>

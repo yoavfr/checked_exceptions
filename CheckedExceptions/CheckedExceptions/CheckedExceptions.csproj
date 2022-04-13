@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <PackageId>CheckedExceptions</PackageId>
+    <PackageVersion>1.0.0.0</PackageVersion>
+    <Authors>yoavf</Authors>
+    <PackageLicenseUrl></PackageLicenseUrl>
+    <PackageProjectUrl>https://yoavf.visualstudio.com/CheckedExceptions</PackageProjectUrl>
+    <PackageIconUrl>https://yoavf.visualstudio.com/b324e221-cf92-4d3a-978b-048357d34d18/_apis/git/repositories/9f186edb-58ec-4768-81bd-e9b4c28510f9/Items?path=%2FCheckedExceptions%2FCheckedExceptions.Vsix%2FcheckMark.png&amp;versionDescriptor%5BversionOptions%5D=0&amp;versionDescriptor%5BversionType%5D=0&amp;versionDescriptor%5Bversion%5D=master&amp;download=false&amp;resolveLfs=true&amp;%24format=octetStream&amp;api-version=5.0-preview.1</PackageIconUrl>
+    <RepositoryUrl>https://yoavf.visualstudio.com/_git/CheckedExceptions</RepositoryUrl>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Description>CheckedExceptions</Description>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <Copyright>Free software</Copyright>
+    <PackageTags>CheckedExceptions, analyzers</PackageTags>
+    <NoPackageAnalysis>true</NoPackageAnalysis>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+    <Version>2.0.0</Version>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+   
+  <ItemGroup>
+    <PackageReference Include="System.Xml.XDocument" Version="4.3.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="2.6.2" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="2.10.0" PrivateAssets="all" />
+    <PackageReference Update="NETStandard.Library" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="tools\*.ps1" CopyToOutputDirectory="Always" Pack="true" PackagePath="" />
+    <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+  </ItemGroup>
+
+</Project>
